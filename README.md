@@ -97,7 +97,7 @@ This project provisions an Azure Resource Group, a Virtual Network within that R
    terraform plan
    ```
 
-4.a **(Optional) Pass variables at runtime:**  
+   4.a **(Optional) Pass variables at runtime:**  
    You can override variable values when running `terraform plan` using the `-var` or `-var-file` options:
    - Pass variables directly:
      ```bash
@@ -107,7 +107,6 @@ This project provisions an Azure Resource Group, a Virtual Network within that R
      ```bash
      terraform plan -var-file="terraform.tfvars"
      ```
-
 
 5. **Apply the configuration:**
    ```bash
