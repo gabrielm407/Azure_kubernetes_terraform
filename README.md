@@ -1,5 +1,8 @@
 # Terraform Azure Kubernetes Service Project
 
+> **Prerequisite:**  
+> If you do not have an Azure subscription, follow the instructions here to set one up: [Create an Azure account](https://learn.microsoft.com/en-us/dotnet/azure/create-azure-account).
+
 This project provisions an Azure Resource Group, a Virtual Network within that Resource Group, and an Azure Kubernetes Service (AKS) cluster in that Virtual Network using Terraform.
 
 ## Prerequisites
