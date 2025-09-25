@@ -37,5 +37,5 @@ variable "kubernetes_node_count" {
 variable "kubernetes_node_size" {
   description = "The size of the nodes in the Kubernetes cluster"
   type        = string
-  default     = "Standard_L2s_v4"
+  default     = "Standard_L2as_v4"
 }

@@ -116,6 +116,14 @@ This project provisions an Azure Resource Group, a Virtual Network within that R
    ```
    Confirm the action when prompted.
 
+   5.a **(Optional) Give auto approve**  
+   You can avoid having to say 'yes' every time you run the terraform apply phase by running the following command (use with caution):
+   - auto approve:
+     ```bash
+     terraform apply -auto-approve
+     ```
+
+
 ## Outputs
 
 After deployment, you will see output values such as the Resource Group name, Virtual Network ID, and AKS cluster details.
@@ -127,7 +135,15 @@ To remove all resources created by this project, run:
 terraform destroy
 ```
 
+   **(Optional) Give auto approve**  
+   You can avoid having to say 'yes' every time you run the terraform destroy phase by running the following command (use with caution):
+   - auto approve:
+     ```bash
+     terraform destroy -auto-approve
+     ```
+
 ## Notes
 
+- Remember to change the subscription_id variable in the providers.tf file to the subcription ID in your Azure subscription
 - Ensure you have the necessary permissions in your Azure account to create resources.
 - Modify the `variables.tf` file to customize resource names and configurations as needed.
