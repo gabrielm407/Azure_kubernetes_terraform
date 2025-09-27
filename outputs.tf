@@ -1,15 +1,15 @@
 output "resource_group_name" {
-  value = azurerm_resource_group.main.name
+  value = var.resource_group_name
 }
 
 output "virtual_network_id" {
-  value = azurerm_virtual_network.main.id
+  value = module.virtual_network.id
 }
 
 output "kubernetes_cluster_id" {
-  value = azurerm_kubernetes_cluster.aks.id
+  value = module.aks.id
 }
 
 output "kubernetes_cluster_name" {
-  value = azurerm_kubernetes_cluster.aks.name
+  value = module.aks.name
 }
