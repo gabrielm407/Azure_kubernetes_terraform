@@ -7,5 +7,5 @@ module "virtual_network" {
   address_spaces      = ["10.0.1.0/24"]
   tags                = module.resource_group.tags
 
-  depends_on = [ module.resource_group]
+  depends_on = [ module.resource_group ]
 }

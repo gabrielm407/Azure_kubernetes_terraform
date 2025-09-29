@@ -7,5 +7,5 @@ module "aks" {
   kubernetes_node_count   = var.kubernetes_node_count
   kubernetes_node_size    = var.kubernetes_node_size
 
-  depends_on = [ module.resource_group, module.virtual_network ]
+  depends_on = [ module.virtual_network ]
 }
