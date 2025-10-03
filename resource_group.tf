@@ -1,6 +1,8 @@
 module "resource_group" {
   source   = "./modules/resource_group"
-  name     = var.resource_group_name
+  for_each = toset(local.environments)
+
+  name     = "my-resourcegroup-${each.value}"
   location = var.location
   tags     = {
     environment = "Production"
