@@ -8,5 +8,5 @@ module "virtual_network" {
   address_spaces      = ["10.0.1.0/24"]
   service_endpoints   = ["Microsoft.Storage"]
 
-  depends_on = [ module.resource_group ]
+  depends_on = [module.resource_group]
 }

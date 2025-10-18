@@ -4,7 +4,7 @@ module "resource_group" {
 
   name     = "my-resourcegroup-${each.value}"
   location = var.location
-  tags     = {
+  tags = {
     environment = "Production"
   }
 }

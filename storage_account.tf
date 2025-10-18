@@ -1,10 +1,9 @@
 module "storage_account" {
-  source = "git::git@github.com:Azure-Terraform/terraform-azurerm-storage-account.git?ref=v1.2.0"
+  source   = "git::git@github.com:Azure-Terraform/terraform-azurerm-storage-account.git?ref=v1.2.0"
   for_each = toset(local.environments)
 
-  # resource_group_name = "my-resourcegroup-${each.value}" 
   resource_group_name = module.resource_group[each.key].name
-  name                = "mystorageacct${each.value}405"          # Adding 405 at the end to ensure uniqueness, as storage account names must be globally unique
+  name                = "mystorageacct${each.value}405" # Adding 405 at the end to ensure uniqueness, as storage account names must be globally unique
   location            = module.resource_group[each.key].location
   tags                = module.resource_group[each.key].tags
 
@@ -14,7 +13,7 @@ module "storage_account" {
   shared_access_key_enabled     = true
 
   access_list = {
-    "my_ip" = "0.0.0.0/0" 
+    "my_ip" = "0.0.0.0/0"
   }
 
   service_endpoints = {
@@ -33,5 +32,5 @@ module "storage_account" {
     }
   }
 
-  depends_on = [ module.virtual_network ]  # This isn't required since Terraform is smart enough to figure it out since it references the virtual network module on line 21 and knows that module must be created first
+  depends_on = [module.virtual_network] # This isn't required since Terraform is smart enough to figure it out since it references the virtual network module on line 21 and knows that module must be created first
 }
