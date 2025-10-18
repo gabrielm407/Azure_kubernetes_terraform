@@ -15,3 +15,14 @@ provider "azurerm" {
   features {}
   subscription_id = "60e43b59-17e9-40fa-bca0-48cf63303fd9"
 }
+
+terraform {
+  backend "remote" {
+    hostname     = "app.terraform.io"            # or your TFE appliance hostname
+    organization = "Default Project"
+
+    workspaces {
+      name = "Azure_kubernetes_terraform"
+    }
+  }
+}
