@@ -39,3 +39,9 @@ variable "kubernetes_node_size" {
   type        = string
   default     = "Standard_L2as_v4"
 }
+
+variable "ARM_CLIENT_SECRET" {
+  description = "The client secret for the Azure service principal"
+  type        = string
+  sensitive   = true
+}
