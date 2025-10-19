@@ -1,5 +1,5 @@
 module "storage_account" {
-  source   = "git::git@github.com:Azure-Terraform/terraform-azurerm-storage-account.git?ref=v1.2.0"
+  source   = "git::https://github.com/Azure-Terraform/terraform-azurerm-storage-account.git?ref=v1.2.0"
   for_each = toset(local.environments)
 
   resource_group_name = module.resource_group[each.key].name

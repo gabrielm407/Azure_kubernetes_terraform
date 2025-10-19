@@ -9,9 +9,20 @@ terraform {
       version = ">= 3.0"
     }
   }
+  backend "remote" {
+    hostname     = "app.terraform.io"
+    organization = "Default Project"
+
+    workspaces {
+      name = "Azure_kubernetes_terraform"
+    }
+  }
 }
 
 provider "azurerm" {
   features {}
-  subscription_id = "60e43b59-17e9-40fa-bca0-48cf63303fd9"
+  subscription_id = var.ARM_SUBSCRIPTION_ID
+  tenant_id       = var.ARM_TENANT_ID
+  client_id       = var.ARM_CLIENT_ID
+  client_secret   = var.ARM_CLIENT_SECRET
 }
