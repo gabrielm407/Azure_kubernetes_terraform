@@ -40,8 +40,23 @@ variable "kubernetes_node_size" {
   default     = "Standard_L2as_v4"
 }
 
-variable "ARM_CLIENT_SECRET" {
+variable "arm_client_secret" {
   description = "The client secret for the Azure service principal"
   type        = string
   sensitive   = true
+}
+
+variable "arm_subscription_id" {
+  description = "The Azure Subscription ID"
+  type        = string
+}
+
+variable "arm_tenant_id" {
+  description = "The tentant ID for the Azure service principal"
+  type        = string
+}
+
+variable "arm_client_id" {
+  description = "The client ID for the Azure service principal"
+  type        = string
 }
