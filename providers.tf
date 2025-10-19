@@ -10,7 +10,7 @@ terraform {
     }
   }
   backend "remote" {
-    hostname     = "app.terraform.io"            # or your TFE appliance hostname
+    hostname     = "app.terraform.io"
     organization = "Default Project"
 
     workspaces {
